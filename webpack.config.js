@@ -26,6 +26,27 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  optimization: {
+    minimize: true,
+    splitChunks: {
+      chunks: 'async',
+      name: true,
+      cacheGroups: {
+        vendors: {
+          name: 'vendors',
+          chunks: 'all',
+          reuseExistingChunk: true,
+          priority: 1,
+          filename: isDev ? 'assets/vendor.js' : 'assets/vendor-[hash].js',
+          enforce: true,
+          test(module,chunks) {
+            const name = module.nameForCondition && module.nameForCondition()
+            return chunks.some(chunk => chunk.name !== 'vendors' && /[\\/]node_modules[\\/]/.test(name))
+          }
+        }
+      }
+    }
+  },
   module: {
     rules: [
       {
