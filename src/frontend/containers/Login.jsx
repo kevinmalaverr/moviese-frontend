@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { loginRequest } from '../actions';
+import { loginUser } from '../actions';
 import Header from '../components/Header';
 import '../assets/styles/components/Login.scss';
 import googleIcon from '../assets/static/google-icon.png';
@@ -21,8 +21,7 @@ const Login = props => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    props.loginRequest(form);
-    props.history.push('/');
+    props.loginUser(form, '/');
   }
 
   return (
@@ -46,7 +45,7 @@ const Login = props => {
               placeholder="Contraseña"
               onChange={handleInput}
             />
-            <button className="button">Iniciar sesión</button>
+            <button className="button" type="submit">Iniciar sesión</button>
             <div className="login__container--remember-me">
               <label>
                 <input type="checkbox" id="cbox1" value="first_checkbox" /> Recuérdame
@@ -71,7 +70,7 @@ const Login = props => {
 }
 
 const mapDispatchToProps = {
-  loginRequest,
+  loginUser,
 };
 
 export default connect(null, mapDispatchToProps)(Login);
