@@ -28,8 +28,7 @@ const Header = props => {
   return (
     <header className={headerClass}>
       <Link to="/">
-        {/* <img className="header__img" src={logo} alt="Platzi Video" /> */}
-        <span>moviese</span>
+        <img className="header__img" src={logo} alt="Platzi Video" />
       </Link>
       <div className="header__menu">
         <div className="header__menu--profile">
