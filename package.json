@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack-cli --config webpack.config.js",
-    "start:dev": "nodemon src/server/index"
+    "start:dev": "nodemon src/server/index",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [],
   "author": "",
@@ -59,12 +60,25 @@
     "babel-loader": "^8.0.6",
     "compression-webpack-plugin": "^6.0.3",
     "css-loader": "^3.4.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
     "file-loader": "^4.3.0",
+    "jest": "^26.6.3",
     "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.13.1",
     "nodemon": "^2.0.6",
+    "react-test-renderer": "^17.0.1",
     "sass-loader": "^7.3.1",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/frontend/__test__/setupTest.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif)$": "<rootDir>/src/frontend/__mocks__/fileMock.js",
+      "\\.(scss|css|sass)$": "<rootDir>/src/frontend/__mocks__/styleMock.js"
+    }
   }
 }
