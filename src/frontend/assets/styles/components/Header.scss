@@ -1,6 +1,5 @@
 .header {
   align-items: center;
-  background: #8f57fd;
   color: white;
   display: flex;
   height: 100px;
@@ -10,12 +9,15 @@
 }
 
 .isLogin, .isRegister {
-  background-color: #21c08b;
+  // background-color: #21c08b;
 }
 
-.header__img {
+.header__title {
   margin-left: 30px;
-  width: 200px;
+  font-size: 24px;
+  text-decoration: wavy;
+  color: white;
+  font-weight: 700;
 }
 
 .header__menu {

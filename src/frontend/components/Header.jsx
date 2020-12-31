@@ -5,12 +5,10 @@ import classNames from 'classnames';
 import gravatar from '../utils/gravatar';
 import { logoutRequest } from '../actions';
 import '../assets/styles/components/Header.scss';
-import logo from '../assets/static/logo-platzi-video-BW2.png';
 import userIcon from '../assets/static/user-icon.png';
 
 const Header = props => {
   const { user, isLogin, isRegister } = props;
-  console.log("user", user)
   const hasUser = Object.keys(user).length > 0;
 
   const handleLogout = () => {
@@ -27,8 +25,8 @@ const Header = props => {
   });
   return (
     <header className={headerClass}>
-      <Link to="/">
-        <img className="header__img" src={logo} alt="Platzi Video" />
+      <Link to="/" className="header__title">
+        <span>Moviese</span>
       </Link>
       <div className="header__menu">
         <div className="header__menu--profile">

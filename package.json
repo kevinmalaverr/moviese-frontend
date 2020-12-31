@@ -7,7 +7,8 @@
     "build": "webpack-cli --config webpack.config.js",
     "start:dev": "nodemon src/server/index",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:coverage":"jest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -73,6 +74,7 @@
     "webpack-dev-server": "^3.10.1"
   },
   "jest": {
+    "verbose": true,
     "setupFilesAfterEnv": [
       "<rootDir>/src/frontend/__test__/setupTest.js"
     ],

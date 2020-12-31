@@ -46,12 +46,6 @@ const Login = props => {
               onChange={handleInput}
             />
             <button className="button" type="submit">Iniciar sesión</button>
-            <div className="login__container--remember-me">
-              <label>
-                <input type="checkbox" id="cbox1" value="first_checkbox" /> Recuérdame
-              </label>
-              <a href="/">Olvidé mi contraseña</a>
-            </div>
           </form>
           <section className="login__container--social-media">
             <div><img src={googleIcon} /> Inicia sesión con Google</div>
